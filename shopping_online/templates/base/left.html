@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>下拉菜单</title>
+    <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js" type="text/javascript"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        a {
+            color: #f39800;
+            text-decoration: none;
+        }
+
+        .list-title {
+            display: inline-block;
+            width:200px;
+            border-top: solid 1px #ccc;
+            border-left: solid 1px #ccc;
+            border-right: solid 1px #ccc;
+            background: #FFF;
+            text-align: center;
+            height: 60px;
+            line-height: 60px;
+            font-size: 20px;
+            color: #f39800;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .accordion {
+            width: 100%;
+            max-width: 200px;
+            border: solid 1px #ccc;
+            background: #FFF;
+        }
+
+        .accordion .link {
+            cursor: pointer;
+            display: block;
+            padding: 15px 15px 15px 42px;
+            color: #4D4D4D;
+            font-size: 14px;
+            font-weight: 700;
+            border-bottom: 1px solid #CCC;
+            position: relative;
+        }
+
+        .accordion li:last-child .link {
+            border-bottom: 0;
+        }
+
+        .accordion li {
+            cursor: pointer;
+        }
+
+        .accordion li i {
+            position: absolute;
+            top: 16px;
+            left: 12px;
+            font-size: 18px;
+            color: #595959;
+        }
+
+
+        .accordion li.open .link {
+            color: #f39800;
+        }
+
+        .accordion li.open i {
+            color: #f39800;
+        }
+
+
+        .submenu {
+            display: none;
+            background: #f5f5f5;
+            font-size: 14px;
+        }
+
+        .submenu li {
+            border-bottom: 1px solid #d6d7dc;
+        }
+
+        .submenu a {
+            display: block;
+            text-decoration: none;
+            color: #666;
+            padding: 12px;
+            padding-left: 42px;
+        }
+
+        .submenu a:hover, .submenu li.current a {
+            background: #f39800;
+            color: #FFF;
+        }
+
+    </style>
+</head>
+<body>
+<div>
+    <a class="list-title">图书分类</a>
+    <ul id="accordion" class="accordion">
+        <li>
+            <div class="link"><span>程序设计</span></div>
+            <ul class="submenu">
+                <li><a>查看店铺</a></li>
+                <li><a>发布产品</a></li>
+                <li><a>查看产品</a></li>
+                <li><a>已卖出产品</a></li>
+            </ul>
+        </li>
+        <li>
+            <div class="link"><span>办公室用书</span></div>
+            <ul class="submenu">
+                <li><a>发布采购</a></li>
+                <li><a>查看采购</a></li>
+                <li><a>已收到的报价单</a></li>
+            </ul>
+        </li>
+        <li>
+            <div class="link"><span>图形 图像 多媒体</span></div>
+            <ul class="submenu">
+                <li><a>收到的询盘</a></li>
+                <li><a>我的询盘</a></li>
+            </ul>
+        </li>
+        <li>
+            <div class="link"><span>操作系统/系统开发</span></div>
+            <ul class="submenu">
+                <li><a>我的订单</a></li>
+                <li><a>退款申请</a></li>
+            </ul>
+        </li>
+        <li>
+            <div class="link"><span>数据库</span></div>
+            <ul class="submenu">
+                <li><a>我的借贷</a></li>
+                <li><a>需求申请</a></li>
+                <li><a>我的申请</a></li>
+            </ul>
+        </li>
+        <li>
+            <div class="link"><span>网络与数据通讯</span></div>
+            <ul class="submenu">
+                <li><a>基本信息</a></li>
+                <li><a>认证信息</a></li>
+                <li><a>手机认证</a></li>
+                <li><a>银行卡认证</a></li>
+            </ul>
+        </li>
+
+    </ul>
+</div>
+<script>
+    $(function () {
+        var Accordion = function (el, multiple) {
+            this.el = el || {};
+            this.multiple = multiple || false;
+
+            // Variables privadas
+            var links = this.el.find('.link');
+            // Evento
+            links.on('click', {
+                el: this.el,
+                multiple: this.multiple
+            }, this.down)
+        };
+
+        Accordion.prototype.down = function (e) {
+            var $el = e.data.el;
+            $this = $(this);
+            $next = $this.next();
+
+            $next.slideToggle();
+            $this.parent().toggleClass('open');
+
+            if (!e.data.multiple) {
+                $el.find('.submenu').not($next).slideUp().parent().removeClass('open');
+            }
+        };
+
+        var accordion = new Accordion($('#accordion'), false);
+        $('.submenu li').click(function () {
+            $(this).addClass('current').siblings('li').removeClass('current');
+        });
+    });
+</script>
+</body>
+</html>

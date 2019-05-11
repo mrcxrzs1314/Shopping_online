@@ -1,0 +1,62 @@
+body{
+    background: url('../images/03.jpg') no-repeat;
+    background-size: cover;
+    position: relative;
+}
+#divMain{
+    margin-left: 300px;
+    margin-top: 100px;
+    position: absolute;
+    background:rgba(255,255,255,0.4);
+}
+
+#divTitle{
+    width:700px;
+    height:40px;
+    line-height: 40px;
+    background-color:indianred;
+     border: 1px black solid;
+    border-bottom: hidden;
+}
+
+#spanTitle {
+    margin-left: 18px;
+    font-weight:900;
+}
+#divBody{
+    width:700px;
+     border: 1px black solid;
+}
+.tdText{
+    width:200px;
+    text-align: right;
+}
+.tdInput{
+    width:220px;
+}
+.tdError{
+    width:230px;
+}
+#tableForm{
+    line-height:70px;
+}
+.inputClass{
+    width:240px;
+    height:32px;
+    border: 1px solid black;
+    padding-left: 10px;
+}
+#submit{
+width:90px;
+    height:32px;
+    background-color:indianred;
+}
+
+.errorClass{
+    color:#f40000;
+    background-color: #fef2f2;
+    border:1px #ffb8b8 solid;
+    padding:8px 8px 8px 35px;
+    font-size:13px;
+    background: url("../images/error.png") no-repeat;
+}

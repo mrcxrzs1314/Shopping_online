@@ -1,0 +1,70 @@
+body{
+    background:url('../images/04.jpg') no-repeat;
+    background-size: cover;
+    position: relative;
+}
+/*#logo{
+    width:200px;
+    height:200px;
+   border: 1px black dashed;
+    margin-top: 200px;
+    margin-left: 100px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 200px;
+
+}*/
+
+#divMain{
+    margin-left: 400px;
+margin-top:110px;
+    position: absolute;
+    background:rgba(255,255,255,0.3);
+
+}
+
+#divTitle{
+    width:650px;
+    height:40px;
+    line-height: 40px;
+    background-color:lightseagreen;
+     border: 1px black solid;
+    border-bottom: hidden;
+}
+
+#spanTitle {
+    margin-left: 18px;
+    font-weight:900;
+}
+#divBody{
+    width:650px;
+   /* height:370px;*/
+     border: 1px black solid;
+}
+.tdText{
+    width:180px;
+    text-align: right;
+}
+.tdInput{
+    width:200px;
+}
+.tdError{
+    width:250px;
+}
+#tableForm{
+    line-height:70px;
+}
+.inputClass{
+    width:240px;
+    height:40px;
+    border: 1px solid black;
+    padding-left: 10px;
+}
+.errorClass{
+    color:#f40000;
+    background-color: #fef2f2;
+    border:1px #ffb8b8 solid;
+    padding:8px 8px 8px 35px;
+    font-size:13px;
+    background: url("../images/error.png") no-repeat;
+}
