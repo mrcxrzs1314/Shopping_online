@@ -3,6 +3,8 @@ from django.views import View
 
 
 def register(request):
-    return render(request, '../templates/base/../../templates/users/register.html')
+    return render(request, '../templates/users/register.html')
 def login(request):
-    return render(request, '../templates/base/../../templates/users/login.html')
+    return render(request, '../templates/users/login.html')
+def change(request):
+    return render(request, '../templates/users/change.html')

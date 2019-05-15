@@ -2,138 +2,128 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
     <title>总页面</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
     <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
-    <link href="/static/css/base.css" rel="stylesheet">
+    <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js" type="text/javascript"></script>
+   <!-- <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>-->
+    <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link href="/static/css/base.css" rel="stylesheet" type="text/css">
+    <script type="text/javascript" src="/static/js/base.js"></script>
 </head>
 <body>
 <table class="table" align="center">
+    <!--导航栏-->
     <tr class="trTop">
         <td colspan="2" class="tdTop">
-            <div class="div-body">
-                <div class="top">
-                    <h1 style="text-align: center;">网上小卖铺</h1>
-                    <div class="top-a" style="font-size: 10pt; line-height: 10px;">
-                        <a href="/templates/users/login.html" target="_blank">用户登录</a>&nbsp;&nbsp;|&nbsp;&nbsp;
-                        <a href="/templates/users/register.html" target="_blank">用户注册</a>&nbsp;&nbsp;|&nbsp;&nbsp;
-                        <a href="" target="body">我的购物车</a>&nbsp;&nbsp;|&nbsp;&nbsp;
-                        <a href="" target="body">我的订单</a>&nbsp;&nbsp;|&nbsp;&nbsp;
-                        <a href="" target="_blank">修改密码</a>&nbsp;&nbsp;|&nbsp;&nbsp;
-                        <a href="" target="_parent">退出</a>&nbsp;&nbsp;|&nbsp;&nbsp;
-                        <a href="" target="_top">联系我们</a>
-                    </div>
-                </div>
+            <!--<iframe frameborder="0" src="top.html" name="top" scrolling="No"></iframe>-->
+            <h1 style="text-align: center;">网上小卖铺</h1>
+            <div style="font-size: 10pt; line-height: 10px;">
+                <a href="{% url 'users:login' %}" target="_blank">用户登录</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+                <a href="{% url 'users:register' %}" target="_blank">用户注册</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+                <a href="{% url 'trolley:trolley' %}" target="body">我的购物车</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+                <a href="{% url 'orders:order' %}" target="body">我的订单</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+                <a href="{% url 'users:change' %}" target="_blank">修改密码</a>
             </div>
+
         </td>
     </tr>
+    <!--左侧商品栏-->
     <tr>
         <td class="tdLeft" rowspan="2">
-            <div class="div-body">
-                <div class="div-left">
-                    <a class="list-title">商品分类</a>
-                    <ul id="accordion" class="accordion">
-                        <li>
-                            <div class="link"><span>干粮类</span></div>
-                            <ul class="submenu">
-                                <li><a>面包</a></li>
-                                <li><a>饼干</a></li>
-                                <li><a>膨化食品</a></li>
-                            </ul>
-                        </li>
-                        <li>
-                            <div class="link"><span>水</span></div>
-                            <ul class="submenu">
-                                <li><a>碳酸饮料</a></li>
-                                <li><a target="body" href="">牛奶</a></li>
-                                <li><a>矿泉水</a></li>
-                                <li><a>果汁</a></li>
-                            </ul>
-                        </li>
-                        <li>
-                            <div class="link"><span>优惠大礼包</span></div>
-                            <ul class="submenu">
-                                <li><a>三只松鼠</a></li>
-                                <li><a>良品铺子</a></li>
-                                <li><a>百草味</a></li>
-                            </ul>
-                        </li>
-                        <li>
-                            <div class="link"><span>食肉者的天堂</span></div>
-                            <ul class="submenu">
-                                <li><a>牛肉</a></li>
-                                <li><a>鸡肉</a></li>
-                                <li><a>鱼</a></li>
-                            </ul>
-                        </li>
-                        <li>
-                            <div class="link"><span>速食产品</span></div>
-                            <ul class="submenu">
-                                <li><a>方便面</a></li>
-                                <li><a>懒人小火锅</a></li>
-                                <li><a>速食米饭</a></li>
-                            </ul>
-                        </li>
+            <!-- <iframe frameborder="0" src="left.html" name="left" scrolling="No"></iframe>-->
+            <div>
+                <ul id="accordion" class="accordion">
+                    <li>
+                        <div class="link"><span class="listMain">商品分类</span></div>
+                    </li>
+                    <li>
+                        <div class="link"><span>干粮类</span></div>
+                        <ul class="submenu">
+                            <li><a target="_blank" href="{% url 'shopping:shopping' %}">面包</a></li>
+                            <li><a target="_blank" href="{% url 'shopping:shopping' %}">饼干</a></li>
+                            <li><a target="_blank" href="{% url 'shopping:shopping' %}">膨化食品</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <div class="link"><span>水</span></div>
+                        <ul class="submenu">
+                            <li><a target="_blank" href="{% url 'shopping:shopping' %}">碳酸饮料</a></li>
+                            <li><a target="_blank" href="{% url 'shopping:shopping' %}">牛奶</a></li>
+                            <li><a target="_blank" href="{% url 'shopping:shopping' %}">矿泉水</a></li>
+                            <li><a target="_blank" href="{% url 'shopping:shopping' %}">果汁</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <div class="link"><span>优惠大礼包</span></div>
+                        <ul class="submenu">
+                            <li><a target="_blank" href="{% url 'shopping:shopping' %}">三只松鼠</a></li>
+                            <li><a target="_blank" href="{% url 'shopping:shopping' %}">良品铺子</a></li>
+                            <li><a target="_blank" href="{% url 'shopping:shopping' %}">百草味</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <div class="link"><span>食肉者的天堂</span></div>
+                        <ul class="submenu">
+                            <li><a target="_blank" href="{% url 'shopping:shopping' %}">牛肉</a></li>
+                            <li><a target="_blank" href="{% url 'shopping:shopping' %}">鸡肉</a></li>
+                            <li><a target="_blank" href="{% url 'shopping:shopping' %}">鱼</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <div class="link"><span>速食产品</span></div>
+                        <ul class="submenu">
+                            <li><a target="_blank" href="{% url 'shopping:shopping' %}">方便面</a></li>
+                            <li><a  target="_blank" href="{% url 'shopping:shopping' %}">懒人小火锅</a></li>
+                            <li><a target="_blank" href="{% url 'shopping:shopping' %}">速食米饭</a></li>
+                        </ul>
+                    </li>
 
-                    </ul>
+                </ul>
 
-                </div>
-            </div>
-
-        </td>
-        <td class="tdSearch" style="border-bottom-width: 0px;">
-            <div class="div-body">
-                <form>
-                    <input class="search-in" type="text"/>
-                    <a class="search-a" href=""><img src="/static/images/search.jpg"/></a>
-
-                </form>
             </div>
         </td>
+        <!--<td class="tdSearch" style="border-bottom-width: 0px;">
+            <iframe frameborder="0" src="search.html" name="search" scrolling="No"></iframe>
+        </td>-->
     </tr>
+    <!--轮播图-->
     <tr>
         <td class="tdBody" style="border-top-width: 0px;">
-            <div class="div-body">
-                <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
-                    <!-- 小圆点-->
-                    <ol class="carousel-indicators">
-                        <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-                        <li data-target="#carousel-example-generic" data-slide-to="1"></li>
-                        <li data-target="#carousel-example-generic" data-slide-to="2"></li>
-                    </ol>
+            <!-- <iframe frameborder="0" src="body.html" name="body"></iframe>-->
+            <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+                <!-- 小圆点-->
+                <ol class="carousel-indicators">
+                    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+                    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+                    <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+                </ol>
 
-                    <!-- 轮播的图片 -->
-                    <div class="carousel-inner" role="listbox">
-                        <div class="item active">
-                            <img src="/static/images/img/1.jpg" width="800" height="300" alt="...">
-                        </div>
-                        <div class="item">
-                            <img src="/static/images/img/2.jpg" width="800" height="300" alt="...">
-                        </div>
-                        <div class="item">
-                            <img src="/static/images/img/3.jpg" width="800" height="300" alt="...">
-                        </div>
+                <!-- 轮播的图片 -->
+                <div class="carousel-inner" role="listbox">
+                    <div class="item active">
+                        <img src="/static/images/img/1.jpg"  style="width:950px;height:500px;" alt="...">
                     </div>
-
-                    <!-- 控制按钮-->
-                    <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
-                        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-                        <span class="sr-only">Previous</span>
-                    </a>
-                    <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
-                        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-                        <span class="sr-only">Next</span>
-                    </a>
+                    <div class="item">
+                        <img src="/static/images/img/2.jpg" style="width:950px;height:500px;" alt="...">
+                    </div>
+                    <div class="item">
+                        <img src="/static/images/img/3.jpg" style="width:950px;height:500px;" alt="...">
+                    </div>
                 </div>
-            </div>
 
+                <!-- 控制按钮-->
+                <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+                    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+                    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </div>
         </td>
     </tr>
 </table>
-
-<script src="/static/js/left.js"></script>
-<script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js" type="text/javascript"></script>
-<script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
-<script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </body>
 </html>

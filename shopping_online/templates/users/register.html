@@ -7,6 +7,7 @@
 
 </head>
 <body>
+{% csrf_token %}
 <div id="divMain">
     <div id="divTitle">
 <span id="spanTitle">新用户注册</span>
@@ -17,7 +18,7 @@
                 <tr>
                     <td class="tdText">用户名：</td>
                     <td class="tdInput">
-                        <input class="inputClass"   type="text" name="registname" id="registname" placeholder="请输入用户名"/>
+                        <input class="inputClass" type="text" name="registname" id="registname" placeholder="请输入用户名"/>
                     </td>
                     <td class="tdError">
                         <label class="errorClass" id="registnameError"></label>
@@ -43,12 +44,11 @@
                 </tr>
                 <tr>
                     <td></td>
-                    <td><input  type="image" src="../../static/images/regist1.jpg "/></td>
+                    <td><input type="submit" value="立即注册" class="register-btn"></td>
                     <td></td>
                 </tr>
             </table>
         </form>
-
     </div>
 </div>
 

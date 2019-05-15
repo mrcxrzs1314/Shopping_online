@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>我的订单</title>
+    <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" type="text/css" rel="stylesheet">
+    <link href="/static/css/order.css" rel="stylesheet" type="text/css">
+    <script src="/static/js/order.js"></script>
+</head>
+<body>
+<div class="main">
+    <h1>我的订单</h1>
+    <div class="container">
+        <div class="row">
+            <table border="0" cellpadding="0" cellspacing="0">
+                <tr>
+                    <th class="col-md-4">商品信息</th>
+                    <th class="col-md-2">单价</th>
+                    <th class="col-md-3">数量</th>
+                    <th class="col-md-3">状态</th>
+                </tr>
+                <tr>
+                    <td>
+                        <img src="/static/images/img-food/cookie/01.jpg"/>
+                        <span>好吃点</span>
+                    </td>
+                    <td>
+                        <span>&yen;5</span>
+                    </td>
+                    <td>
+                        <span>4</span>
+                    </td>
+                    <td>
+                        <span>已支付</span>
+                    </td>
+                </tr>
+                 <tr>
+                    <td>
+                        <img src="/static/images/img-food/cookie/02.jpg"/>
+                        <span>蔓越莓饼干</span>
+                    </td>
+                    <td>
+                        <span>&yen;12</span>
+                    </td>
+                    <td>
+                        <span>1</span>
+                    </td>
+                    <td>
+                        <span>已支付</span>
+                    </td>
+                </tr>
+                 <tr>
+                    <td>
+                        <img src="/static/images/img-food/cookie/03.jpg"/>
+                        <span>压缩饼干</span>
+                    </td>
+                    <td>
+                        <span>&yen;5</span>
+                    </td>
+                    <td>
+                        <span>2</span>
+                    </td>
+                    <td>
+                        <span>已支付</span>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>
+<form id="jieSuanForm" action="<c:url value='/CartItemServlet'/>" method="post">
+    <input type="hidden" name="cartItemIds" id="cartItemIds"/>
+    <input type="hidden" name="total" id="hiddenTotal"/>
+    <input type="hidden" name="method" value="loadCartItems"/>
+</form>
+</body>
+</html>

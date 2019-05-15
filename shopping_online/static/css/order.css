@@ -1,0 +1,41 @@
+body {
+   background-image: url("../images/07.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color: #eeeeee;
+}
+h1{
+    color:lightseagreen;
+    font-size: 45px;
+  text-align: center;
+}
+.container{
+    background:rgba(255,255,255,0.8);
+    width:900px;
+}
+table {
+    border: 1px solid #CCCCCC;
+    margin:0 auto;
+    width: 900px;
+}
+ th{
+    font-size:20px;
+}
+td{
+    font-size:16px;
+    padding-left:20px;
+}
+th, td {
+    border-collapse: collapse; /*把表格的相邻边框结合在一起*/
+    /*text-align: center;*/
+     border-bottom: 1px solid #CCCCCC;
+     height:60px;
+}
+
+a{
+    color: red;
+}
+img {
+    width: 100px;
+    height: 100px;
+}

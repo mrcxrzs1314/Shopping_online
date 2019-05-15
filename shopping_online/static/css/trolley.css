@@ -1,0 +1,88 @@
+body {
+    background-image: url("/static/images/06.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color: #eeeeee;
+}
+
+h1 {
+    color: lightseagreen;
+    font-size: 45px;
+    text-align: center;
+}
+
+.container {
+    width: 1147px;
+    background: rgba(255, 255, 255, 0.8);
+
+}
+
+table {
+    border: 1px solid #CCCCCC;
+    margin: 0 auto;
+}
+
+th {
+    font-size: 20px;
+}
+
+td {
+    font-size: 16px;
+}
+
+th, td {
+    border-collapse: collapse; /*把表格的相邻边框结合在一起*/
+    text-align: center;
+    border-bottom: 1px solid #CCCCCC;
+    height: 60px;
+}
+
+a {
+    color: red;
+}
+
+img {
+    width: 100px;
+    height: 100px;
+}
+
+.jian {
+    background: url(../images/jia.png) no-repeat;
+    display: inline-block;
+    background-position: -166px -145px;
+    height: 11px;
+    width: 11px;
+    margin: 0;
+}
+
+.jia {
+    background: url(../images/jia.png) no-repeat;
+    display: inline-block;
+    background-position: -178px -145px;
+    height: 11px;
+    width: 11px;
+    margin: 0;
+}
+
+.quantity {
+    width: 50px;
+    height: 25px;
+    text-align: center;
+}
+
+.jiesuan {
+    background: url(../images/jia.png) no-repeat;
+    display: inline-block;
+    background-position: 0 -35px;
+    height: 40px;
+    width: 190px;
+    margin: 0;
+}
+
+.kill {
+    background: url(../images/jia.png) no-repeat;
+    display: inline-block;
+    background-position: 0 -480px;
+    height: 40px;
+    width: 190px;
+}

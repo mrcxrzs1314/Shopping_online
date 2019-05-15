@@ -1,3 +1,4 @@
 from django.shortcuts import render
 
-# Create your views here.
+def trolley(request):
+    return render(request, '../templates/trolley/trolley.html')
