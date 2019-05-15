@@ -30,7 +30,12 @@ INSTALLED_APPS = [
     'trolley',
     'shopping',
     'orders',
+    'verifications',
 ]
+
+# 自定义用户模型
+AUTH_USER_MODEL = 'users.Users'
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
