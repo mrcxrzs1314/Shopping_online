@@ -5,7 +5,7 @@ from users.models import Users
 class CheckUsernameView(View):
     """
     Check whether the user exists
-    GET usernames/(?P<username>\w{5,20})/
+    GET username/(?P<username>\w{5,20})/
     """
     def get(self, request, username):
 

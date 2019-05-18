@@ -94,3 +94,15 @@ background:rgba(255,255,255,0.3);
     background-color: red;
     border-radius: 5px 5px 1px 1px;
 }
+
+.login-btn {
+    width: 100%;
+    font-size: 20px;
+    color: #fff;
+    line-height: 50px;
+    background: deepskyblue;
+    border: 1px solid deepskyblue;
+    border-radius: 5px;
+    cursor: pointer;
+}
+

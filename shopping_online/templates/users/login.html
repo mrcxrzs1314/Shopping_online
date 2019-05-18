@@ -3,12 +3,13 @@
 <head>
 
     <meta charset="UTF-8">
-    <title>用户登录页面</title>
+    <title>登录</title>
     <link href="/static/css/login.css" type="text/css" rel="stylesheet">
     <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js" type="text/javascript"></script>
     <script src="https://cdn.bootcss.com/JQuery-Snowfall/1.7.3/snowfall.jquery.min.js"></script>
      <script src="https://cdn.bootcss.com/JQuery-Snowfall/1.7.3/snowfall.min.js"></script>
     <script src="/static/js/login.js" type="text/javascript"></script>
+{#    <script src="/static/js/message.js" type="text/javascript"></script>#}
 </head>
 <body>
 <div id="divMain">
@@ -21,7 +22,7 @@
 
     </div>
     <div id="divBody">
-        <form>
+        <form action="" method="post" class="form-contain">
             <table id="tableForm">
                 <tr>
                     <td class="tdText">用户名：</td>
@@ -43,7 +44,7 @@
                 </tr>
                 <tr>
                     <td></td>
-                    <td><a href="{% url 'shopping:index' %}"><img src="/static/images/login1.jpg"/></a></td>
+                    <td><input type="submit" value="立即登录" class="login-btn"></td>
                     <td></td>
                 </tr>
             </table>
