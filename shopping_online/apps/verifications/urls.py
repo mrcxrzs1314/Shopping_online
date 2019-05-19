@@ -5,6 +5,6 @@ app_name = "verifications"
 
 
 urlpatterns = [
-    re_path('username/(?P<username>\w{5,20})/', views.CheckUsernameView.as_view(), name='check_username'),
+    re_path('username/(?P<username>\w{3,20})/', views.CheckUsernameView.as_view(), name='check_username'),
 
 ]

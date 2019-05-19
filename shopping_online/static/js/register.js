@@ -1,6 +1,6 @@
 $(function () {
 
-    let $username = $('#registname');
+    let $username = $("input[name=registname]");
     let $register = $('.form-contain');  // 获取注册表单元素
 
     $username.blur(function () {
@@ -9,24 +9,29 @@ $(function () {
 
     function fn_check_username() {
         let sUsername = $username.val();  // 获取用户名字符串
-
+        let sReturnValue = "";
 
         // 发送ajax请求，去后端查询用户名是否存在
         $.ajax({
             url: '/username/' + sUsername + '/',
             type: 'GET',
             dataType: 'json',
+            async: false
         })
             .done(function (res) {
                 if (res.data.count !== 0) {
                     message.showError(res.data.username + '已注册，请重新输入！')
+                    sReturnValue = ""
                 } else {
                     message.showInfo(res.data.username + '能正常使用！')
+                    sReturnValue = "success"
                 }
             })
             .fail(function () {
                 message.showError('服务器超时，请重试！');
+                sReturnValue = ""
             });
+        return sReturnValue
     }
 
     $register.submit(function (e) {
@@ -74,7 +79,7 @@ $(function () {
         // 2、创建ajax请求
         $.ajax({
             // 请求地址
-            url: "register/",  // url尾部需要添加/
+            url: '/register/',  // url尾部需要添加/
             // 请求方式
             type: "POST",
             data: JSON.stringify(SdataParams),
@@ -89,7 +94,7 @@ $(function () {
                     message.showSuccess('恭喜你，注册成功！');
                     setTimeout(function () {
                         // 注册成功之后重定向到主页
-                        window.location.href = document.referrer;
+                        window.location.href = '/shopping_online/';
                     }, 1000)
                 } else {
                     // 注册失败，打印错误信息
@@ -248,9 +253,6 @@ $(function () {
             ele.css("display", "");//显示元素
         }
     }
-
-
-
 
 
 });

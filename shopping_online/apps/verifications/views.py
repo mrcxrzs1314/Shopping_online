@@ -1,6 +1,7 @@
-from utils.json_fun import to_json_data
 from django.views import View
+from utils.json_fun import to_json_data
 from users.models import Users
+
 
 class CheckUsernameView(View):
     """
@@ -14,3 +15,9 @@ class CheckUsernameView(View):
             'count': Users.objects.filter(username=username).count()
         }
         return to_json_data(data=data)
+
+
+
+
+
+

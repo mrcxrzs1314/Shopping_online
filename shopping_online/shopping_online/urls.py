@@ -7,5 +7,6 @@ urlpatterns = [
    path('',include('orders.urls')),
    path('',include('trolley.urls')),
    path('', include('shopping.urls')),
+   path('', include('verifications.urls')),
 
 ]
