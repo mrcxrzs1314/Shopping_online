@@ -1,5 +1,6 @@
 from django.shortcuts import render
-from .models import air,bai,beef,bread,chicken,cookie,juice,rice,fish,hotpot,liang,milk,noodles,san,soda,water
+from .models import *
+
 
 
 def index(request):
@@ -11,6 +12,7 @@ def login_last(request):
 
 def food_air(request):
     result = air.objects.all()
+    print(result)
     return render(request, '../templates/shopping/air.html',{'result': result})
 
 def food_bai(request):

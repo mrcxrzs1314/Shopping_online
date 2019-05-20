@@ -37,42 +37,42 @@
                     <li>
                         <div class="link"><span>干粮类</span></div>
                         <ul class="submenu">
-                            <li><a target="_blank" href="{% url 'shopping:shopping' %}">面包</a></li>
-                            <li><a target="_blank" href="{% url 'shopping:shopping' %}">饼干</a></li>
-                            <li><a target="_blank" href="{% url 'shopping:shopping' %}">膨化食品</a></li>
+                            <li><a target="_blank" href="{% url 'shopping:bread' %}">面包</a></li>
+                            <li><a target="_blank" href="{% url 'shopping:cookie' %}">饼干</a></li>
+                            <li><a target="_blank" href="{% url 'shopping:air' %}">膨化食品</a></li>
                         </ul>
                     </li>
                     <li>
                         <div class="link"><span>水</span></div>
                         <ul class="submenu">
-                            <li><a target="_blank" href="{% url 'shopping:shopping' %}">碳酸饮料</a></li>
-                            <li><a target="_blank" href="{% url 'shopping:shopping' %}">牛奶</a></li>
-                            <li><a target="_blank" href="{% url 'shopping:shopping' %}">矿泉水</a></li>
-                            <li><a target="_blank" href="{% url 'shopping:shopping' %}">果汁</a></li>
+                            <li><a target="_blank" href="{% url 'shopping:soda' %}">碳酸饮料</a></li>
+                            <li><a target="_blank" href="{% url 'shopping:milk' %}">牛奶</a></li>
+                            <li><a target="_blank" href="{% url 'shopping:water' %}">矿泉水</a></li>
+                            <li><a target="_blank" href="{% url 'shopping:juice' %}">果汁</a></li>
                         </ul>
                     </li>
                     <li>
                         <div class="link"><span>优惠大礼包</span></div>
                         <ul class="submenu">
-                            <li><a target="_blank" href="{% url 'shopping:shopping' %}">三只松鼠</a></li>
-                            <li><a target="_blank" href="{% url 'shopping:shopping' %}">良品铺子</a></li>
-                            <li><a target="_blank" href="{% url 'shopping:shopping' %}">百草味</a></li>
+                            <li><a target="_blank" href="{% url 'shopping:san' %}">三只松鼠</a></li>
+                            <li><a target="_blank" href="{% url 'shopping:liang' %}">良品铺子</a></li>
+                            <li><a target="_blank" href="{% url 'shopping:bai' %}">百草味</a></li>
                         </ul>
                     </li>
                     <li>
                         <div class="link"><span>食肉者的天堂</span></div>
                         <ul class="submenu">
-                            <li><a target="_blank" href="{% url 'shopping:shopping' %}">牛肉</a></li>
-                            <li><a target="_blank" href="{% url 'shopping:shopping' %}">鸡肉</a></li>
-                            <li><a target="_blank" href="{% url 'shopping:shopping' %}">鱼</a></li>
+                            <li><a target="_blank" href="{% url 'shopping:beef' %}">牛肉</a></li>
+                            <li><a target="_blank" href="{% url 'shopping:chicken' %}">鸡肉</a></li>
+                            <li><a target="_blank" href="{% url 'shopping:fish' %}">鱼</a></li>
                         </ul>
                     </li>
                     <li>
                         <div class="link"><span>速食产品</span></div>
                         <ul class="submenu">
-                            <li><a target="_blank" href="{% url 'shopping:shopping' %}">方便面</a></li>
-                            <li><a  target="_blank" href="{% url 'shopping:shopping' %}">懒人小火锅</a></li>
-                            <li><a target="_blank" href="{% url 'shopping:shopping' %}">速食米饭</a></li>
+                            <li><a target="_blank" href="{% url 'shopping:noodles' %}">方便面</a></li>
+                            <li><a  target="_blank" href="{% url 'shopping:hotpot' %}">懒人小火锅</a></li>
+                            <li><a target="_blank" href="{% url 'shopping:rice' %}">速食米饭</a></li>
                         </ul>
                     </li>
 
@@ -80,14 +80,10 @@
 
             </div>
         </td>
-        <!--<td class="tdSearch" style="border-bottom-width: 0px;">
-            <iframe frameborder="0" src="search.html" name="search" scrolling="No"></iframe>
-        </td>-->
     </tr>
     <!--轮播图-->
     <tr>
         <td class="tdBody" style="border-top-width: 0px;">
-            <!-- <iframe frameborder="0" src="body.html" name="body"></iframe>-->
             <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
                 <!-- 小圆点-->
                 <ol class="carousel-indicators">
