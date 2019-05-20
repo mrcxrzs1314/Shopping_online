@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>商品详情</title>
+    <link rel="stylesheet" type="text/css"   href="/static/iconfont/iconfont.css">
+    <link rel="stylesheet" type="text/css" href="/static/css/shopping.css">
+</head>
+<body>
+<h1>商品展示栏</h1>
+<ul>
+    {% for i in result %}
+    <li>
+        <div class="inner">
+            <a class="pic" href=""><img src="/static/images/{{ i.image }}  %}" border="0"/></a>
+            <p class="price">
+                <span class="price_r">&yen;{{ i.price }}</span>
+            </p>
+            <p class="foodname">{{ i.name }}</p>
+            <div class="pay">
+                <a href="#">
+                    <i class="iconfont icon-zhifu"></i>立即购买</a>
+            </div>
+            <div class="car">
+                <a href="#">
+                    <i class="iconfont icon-gouwuche"></i>加入购物车</a>
+            </div>
+        </div>
+    </li>
+    {% endfor %}
+</ul>
+</body>
+</html>

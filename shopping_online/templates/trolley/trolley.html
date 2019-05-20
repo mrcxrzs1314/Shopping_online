@@ -5,101 +5,9 @@
     <title>我的购物车</title>
     <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" type="text/css" rel="stylesheet">
     <link href="/static/css/trolley.css" rel="stylesheet" type="text/css">
-    <!--<script src="我的购物车.js"></script>-->
     <script src="/static/js/jquery-3.3.1.js"></script>
-    <script>
-
-        $(function () {
-            showTotal();
-            setJieSuan(false);
-            /*
-             给全选添加click事件
-             */
-            $("#selectAll").click(function () {
-                /*
-                 1. 获取全选的状态
-                 */
-                var bool = $("#selectAll").attr("checked");
-                if(bool=="checked"){
-                    bool=true;
-                /*
-                 2. 让所有条目的复选框与全选的状态同步
-                 */
-                setItemCheckBox(bool);
-                /*
-                 3. 让结算按钮与全选同步
-                 */
-                setJieSuan(bool);
-                /*
-                 4. 重新计算总计
-                 */
-                showTotal();}
-            });
-
-
-            /*
-             给减号添加click事件
-             */
-            $(".jian").click(function () {
-                var quantity = $("#Quantity").val();
-                // 判断当前数量是否为1，如果为1,那就不是修改数量了，而是要删除了。
-                if (quantity == 1) {
-                    alert("删除此条记录")
-                }
-                else {
-                    $("#Quantity").val(Number(quantity) - 1);
-                }
-            });
-
-            // 给加号添加click事件
-            $(".jia").click(function () {
-                var quantity = $("#Quantity").val();
-                $("#Quantity").val(Number(quantity) + 1);
-
-            });
-        });
-
-        /*
-         * 计算总计
-         */
-        function showTotal() {
-            var total = 0;
-            /*
-             1. 获取所有的被勾选的条目复选框！循环遍历之
-             */
-            $(":checkbox[name=checkboxBtn]:checked").each(function () {
-                //2. 找到小计元素，获取其文本
-                var text = $("#Subtotal").text();
-                //3. 累加计算
-                total += Number(text);
-            });
-            // 4. 把总计显示在总计元素上
-            $("#total").text(total);//round()函数的作用是把total保留2位
-        }
-
-        /*
-         * 统一设置所有条目的复选按钮
-         */
-        function setItemCheckBox(bool) {
-            $(":checkbox[name=checkboxBtn]").attr("checked", bool);
-        }
-
-        /*
-         * 设置结算按钮样式
-         */
-        function setJieSuan(bool) {
-            if (bool) {
-                $("#jiesuan").removeClass("kill").addClass("jiesuan");
-                $("#jiesuan").unbind("click");//撤消当前元素止所有click事件
-            } else {
-                $("#jiesuan").removeClass("jiesuan").addClass("kill");
-                $("#jiesuan").click(function () {
-                    return false;
-                });
-            }
-
-        }
-    </script>
+    <script src="/static/js/round.js"></script>
+    <script src="/static/js/trolley.js"></script>
 </head>
 <body>
 <div class="main">
@@ -117,17 +25,17 @@
                     <th class="col-md-2">小计</th>
                     <th class="col-md-2">操作</th>
                 </tr>
-
                 <tr>
                     <td>
-                        <input value="Check" type="checkbox" name="checkboxBtn" /><!--checked="checked"-->
+                        <input value="Check" type="checkbox" name="checkboxBtn" checked="checked"/>
+                        <!--checked="checked"-->
                     </td>
                     <td>
-                        <img src="/static/images/img-food/cookie/01.jpg"/>
+                        <img src="../img-food/cookie/01.jpg"/>
                         好吃点饼干
                     </td>
                     <td>
-                        <span>&yen;</span>
+                        <span>&yen;<span id="danjia">5</span></span>
                     </td>
 
                     <td>
@@ -136,7 +44,7 @@
                         <a id="Jia" class="jia"></a>
                     </td>
                     <td>
-                        <span class="price">&yen;<span id="Subtotal">100</span></span>
+                        <span class="price">&yen;<span id="Subtotal"></span></span>
                     </td>
                     <td>
                         <a href="#">删除</a>
@@ -155,17 +63,14 @@
                 <tr>
                     <td colspan="5"></td>
                     <td>
-                        <a href="#" class="jiesuan" id="jiesuan"></a>
+
+                        <a href="../支付页面/支付页面.html" class="jiesuan" id="jiesuan"></a>
+
                     </td>
                 </tr>
             </table>
         </div>
     </div>
 </div>
-<form id="jieSuanForm" action="<c:url value='/CartItemServlet'/>" method="post">
-    <input type="hidden" name="cartItemIds" id="cartItemIds"/>
-    <input type="hidden" name="total" id="hiddenTotal"/>
-    <input type="hidden" name="method" value="loadCartItems"/>
-</form>
 </body>
 </html>
