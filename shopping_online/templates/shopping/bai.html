@@ -9,13 +9,14 @@
 <body>
 <h1>商品展示栏</h1>
 <ul>
+       {% for i in result %}
     <li>
         <div class="inner">
-            <a class="pic" href=""><img src="/static/images/img-food/milk/01.jpg" border="0"/></a>
+            <a class="pic" href=""><img src="/static/images/{{ i.image }}" border="0"/></a>
             <p class="price">
-                <span class="price_r">&yen;5</span>
+                <span class="price_r">&yen;{{ i.price }}</span>
             </p>
-            <p class="foodname">蒙牛纯牛奶</p>
+            <p class="foodname">{{ i.name }}</p>
             <div class="pay">
                 <a href="#">
                     <i class="iconfont icon-zhifu"></i>立即购买</a>
@@ -26,142 +27,7 @@
             </div>
         </div>
     </li>
-    <li>
-        <div class="inner">
-            <a class="pic" href=""><img src="/static/images/img-food/milk/02.jpg" border="0"/></a>
-            <p class="price">
-                <span class="price_r">&yen;5</span>
-            </p>
-            <p class="foodname">金典有机纯牛奶</p>
-            <div class="pay">
-                <a href="#">
-                    <i class="iconfont icon-zhifu"></i>立即购买</a>
-            </div>
-            <div class="car">
-                <a href="#">
-                    <i class="iconfont icon-gouwuche"></i>加入购物车</a>
-            </div>
-        </div>
-    </li>
-    <li>
-        <div class="inner">
-            <a class="pic" href=""><img src="/static/images/img-food/milk/03.jpg" border="0"/></a>
-            <p class="price">
-                <span class="price_r">&yen;5</span>
-            </p>
-            <p class="foodname">光明纯牛奶</p>
-             <div class="pay">
-                <a href="#">
-                    <i class="iconfont icon-zhifu"></i>立即购买</a>
-            </div>
-            <div class="car">
-                <a href="#">
-                    <i class="iconfont icon-gouwuche"></i>加入购物车</a>
-            </div>
-        </div>
-    </li>
-    <li>
-        <div class="inner">
-            <a class="pic" href=""><img src="/static/images/img-food/milk/04.jpg" border="0"/></a>
-            <p class="price">
-                <span class="price_r">&yen;6</span>
-            </p>
-            <p class="foodname">莫斯利安</p>
-            <div class="pay">
-                <a href="#">
-                    <i class="iconfont icon-zhifu"></i>立即购买</a>
-            </div>
-            <div class="car">
-                <a href="#">
-                    <i class="iconfont icon-gouwuche"></i>加入购物车</a>
-            </div>
-        </div>
-    </li>
-    <li>
-        <div class="inner">
-            <a class="pic" href=""><img src="/static/images/img-food/milk/05.jpg" border="0"/></a>
-            <p class="price">
-                <span class="price_r">&yen;5</span>
-            </p>
-            <p class="foodname">安慕希</p>
-            <div class="pay">
-                <a href="#">
-                    <i class="iconfont icon-zhifu"></i>立即购买</a>
-            </div>
-            <div class="car">
-                <a href="#">
-                    <i class="iconfont icon-gouwuche"></i>加入购物车</a>
-            </div>
-        </div>
-    </li>
-    <li>
-        <div class="inner">
-            <a class="pic" href=""><img src="/static/images/img-food/milk/06.jpg" border="0"/></a>
-            <p class="price">
-                <span class="price_r">&yen;4</span>
-            </p>
-            <p class="foodname">旺仔牛奶</p>
-            <div class="pay">
-                <a href="#">
-                    <i class="iconfont icon-zhifu"></i>立即购买</a>
-            </div>
-            <div class="car">
-                <a href="#">
-                    <i class="iconfont icon-gouwuche"></i>加入购物车</a>
-            </div>
-        </div>
-    </li>
-    <li>
-        <div class="inner">
-            <a class="pic" href=""><img src="/static/images/img-food/milk/07.jpg" border="0"/></a>
-            <p class="price">
-                <span class="price_r">&yen;3</span>
-            </p>
-            <p class="foodname">AD钙奶</p>
-            <div class="pay">
-                <a href="#">
-                    <i class="iconfont icon-zhifu"></i>立即购买</a>
-            </div>
-            <div class="car">
-                <a href="#">
-                    <i class="iconfont icon-gouwuche"></i>加入购物车</a>
-            </div>
-        </div>
-    </li>
-    <li>
-        <div class="inner">
-            <a class="pic" href=""><img src="/static/images/img-food/milk/08.jpg" border="0"/></a>
-            <p class="price">
-                <span class="price_r">&yen;2</span>
-            </p>
-            <p class="foodname">蒙牛早餐原麦牛奶</p>
-            <div class="pay">
-                <a href="#">
-                    <i class="iconfont icon-zhifu"></i>立即购买</a>
-            </div>
-            <div class="car">
-                <a href="#">
-                    <i class="iconfont icon-gouwuche"></i>加入购物车</a>
-            </div>
-        </div>
-    </li>
-    <li>
-        <div class="inner">
-            <a class="pic" href=""><img src="/static/images/img-food/milk/09.jpg" border="0"/></a>
-            <p class="price">
-                <span class="price_r">&yen;2</span>
-            </p>
-            <p class="foodname">真果粒草莓果粒</p>
-            <div class="pay">
-                <a href="#">
-                    <i class="iconfont icon-zhifu"></i>立即购买</a>
-            </div>
-            <div class="car">
-                <a href="#">
-                    <i class="iconfont icon-gouwuche"></i>加入购物车</a>
-            </div>
-        </div>
-    </li>
+    {% endfor %}
 </ul>
 </body>
 </html>
