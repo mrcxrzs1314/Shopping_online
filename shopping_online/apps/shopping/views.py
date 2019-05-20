@@ -24,7 +24,6 @@ def food_beef(request):
 
 def food_bread(request):
     result = bread.objects.all()
-    print(result)
     return render(request, '../templates/shopping/bread.html',{'result': result})
 
 def food_chicken(request):
