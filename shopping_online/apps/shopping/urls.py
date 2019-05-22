@@ -6,6 +6,7 @@ app_name = "shopping"
 
 urlpatterns = [
     path('', views.index, name='index'),
+    path('pay/', views.pay, name='pay'),
     path('shopping_online/', views.login_last, name='shopping_online'),
     path('air/', views.food_air, name='air'),
     path('bai/', views.food_bai, name='bai'),

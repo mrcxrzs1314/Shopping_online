@@ -9,6 +9,8 @@ def index(request):
 def login_last(request):
     return render(request, '../templates/base/main.html')
 
+def pay(request):
+    return render(request, '../templates/orders/pay.html')
 
 def food_air(request):
     result = air.objects.all()

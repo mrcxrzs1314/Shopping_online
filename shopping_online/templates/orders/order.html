@@ -15,9 +15,10 @@
             <table border="0" cellpadding="0" cellspacing="0">
                 <tr>
                     <th class="col-md-4">商品信息</th>
-                    <th class="col-md-2">单价</th>
-                    <th class="col-md-3">数量</th>
-                    <th class="col-md-3">状态</th>
+                    <th class="col-md-1">单价</th>
+                    <th class="col-md-1">数量</th>
+                    <th class="col-md-2">状态</th>
+                     <th class="col-md-4">收货地址</th>
                 </tr>
                 <tr>
                     <td>
@@ -33,45 +34,13 @@
                     <td>
                         <span>已支付</span>
                     </td>
-                </tr>
-                 <tr>
                     <td>
-                        <img src="/static/images/img-food/cookie/02.jpg"/>
-                        <span>蔓越莓饼干</span>
-                    </td>
-                    <td>
-                        <span>&yen;12</span>
-                    </td>
-                    <td>
-                        <span>1</span>
-                    </td>
-                    <td>
-                        <span>已支付</span>
-                    </td>
-                </tr>
-                 <tr>
-                    <td>
-                        <img src="/static/images/img-food/cookie/03.jpg"/>
-                        <span>压缩饼干</span>
-                    </td>
-                    <td>
-                        <span>&yen;5</span>
-                    </td>
-                    <td>
-                        <span>2</span>
-                    </td>
-                    <td>
-                        <span>已支付</span>
+                        <span>安徽省滁州市凤阳县府城镇安徽科技学院</span>
                     </td>
                 </tr>
             </table>
         </div>
     </div>
 </div>
-<form id="jieSuanForm" action="<c:url value='/CartItemServlet'/>" method="post">
-    <input type="hidden" name="cartItemIds" id="cartItemIds"/>
-    <input type="hidden" name="total" id="hiddenTotal"/>
-    <input type="hidden" name="method" value="loadCartItems"/>
-</form>
 </body>
 </html>
