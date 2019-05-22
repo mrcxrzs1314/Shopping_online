@@ -30,13 +30,17 @@
                         <input value="Check" type="checkbox" name="checkboxBtn" checked="checked"/>
                         <!--checked="checked"-->
                     </td>
-                    <td>
-                        <img src="/static/images/img-food/cookie/01.jpg"/>
-                        好吃点饼干
-                    </td>
-                    <td>
-                        <span>&yen;<span id="danjia">5</span></span>
-                    </td>
+                    {% for i in result %}
+                        <td>
+                            <img src="/static/images/{{ i.image }}"/>
+                            {{ i.t_name }}
+                        </td>
+                        <td>
+                            <span>&yen;<span id="danjia">{{ i.price }}</span></span>
+                        </td>
+                    {% endfor %}
+
+
 
                     <td>
                         <a id="Jian" class="jian"></a>

@@ -147,7 +147,7 @@ ul {
 #carousel-example-generic {
 
     width: 1118px;
-    height: 490px;
+    height: 560px;
 }
 
 .carousel-inner {
@@ -157,4 +157,9 @@ ul {
 
 .carousel-inner img {
     margin: 0 auto;
+}
+
+
+.carousel-indicators {
+    bottom: 80px;
 }

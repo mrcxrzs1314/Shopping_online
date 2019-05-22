@@ -1,4 +1,6 @@
 from django.shortcuts import render
+from .models import orders
 
 def order(request):
-    return render(request, '../templates/orders/order.html')
+    result = orders.objects.all()
+    return render(request, '../templates/orders/order.html',{'result': result})

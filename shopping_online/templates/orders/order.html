@@ -17,27 +17,35 @@
                     <th class="col-md-4">商品信息</th>
                     <th class="col-md-1">单价</th>
                     <th class="col-md-1">数量</th>
-                    <th class="col-md-2">状态</th>
-                     <th class="col-md-4">收货地址</th>
+                    <th class="col-md-1">状态</th>
+                     <th class="col-md-3">收货地址</th>
+                     <th class="col-md-2">手机号码</th>
                 </tr>
+                {% for i in result %}
                 <tr>
                     <td>
-                        <img src="/static/images/img-food/cookie/01.jpg"/>
-                        <span>好吃点</span>
+                        <img src="/static/images/{{ i.image }}"/>
+                        <span>{{ i.o_name }}</span>
                     </td>
                     <td>
-                        <span>&yen;5</span>
+                        <span>&yen;{{ i.s_price }}</span>
                     </td>
                     <td>
-                        <span>4</span>
+                        <span>{{ i.numbers }}</span>
                     </td>
                     <td>
-                        <span>已支付</span>
+                        <span>{{ i.status }}</span>
                     </td>
                     <td>
-                        <span>安徽省滁州市凤阳县府城镇安徽科技学院</span>
+                        <span>{{ i.address }}</span>
+                    </td>
+                    <td>
+                        <span>{{ i.phone }}</span>
                     </td>
                 </tr>
+                {% endfor %}
+
+
             </table>
         </div>
     </div>
